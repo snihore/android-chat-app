@@ -21,14 +21,11 @@ io.on('connection', (socket)=>{
     });
 
     socket.on('createMessage', (message)=>{
-        io.emit('displayMessage', {
-            from: message.from,
-            text: message.text
-        });
+        io.emit('displayMessage', message);
     });
 });
 
-
+//https://rocky-temple-66811.herokuapp.com/
 server.listen(port, ()=>{
     console.log(`Server listen on port ${port}`);
 });
